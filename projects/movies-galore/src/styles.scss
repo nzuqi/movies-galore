@@ -1,0 +1,58 @@
+@import 'styles-variables';
+
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+@import 'styles-reset';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './themes/default-theme';
+@import './themes/light-theme';
+@import './themes/black-theme';
+@import './themes/nature-theme';
+
+@import 'styles-reset.scss-theme';
+@import './app/app/app.component.scss-theme';
+@import './app/shared/big-input/big-input/big-input.component.scss-theme';
+@import './app/features/about/about/about.component.scss-theme';
+@import './app/features/examples/notifications/components/notifications.component.scss-theme';
+@import './app/features/examples/todos/components/todos-container.component.scss-theme';
+@import './app/features/examples/stock-market/components/stock-market-container.component.scss-theme';
+@import './app/features/examples/theming/parent/parent.component.scss-theme';
+@import './app/features/examples/theming/child/child.component.scss-theme';
+@import './app/features/examples/examples/examples.component.scss-theme';
+
+@mixin custom-components-theme($theme) {
+  @include nzuqi-styles-reset-theme($theme);
+  @include nzuqi-app-component-theme($theme);
+  @include nzuqi-about-component-theme($theme);
+  @include nzuqi-big-input-component-theme($theme);
+  @include nzuqi-notifications-component-theme($theme);
+  @include nzuqi-todos-container-component-theme($theme);
+  @include nzuqi-stock-market-container-component-theme($theme);
+  @include nzuqi-parent-component-theme($theme);
+  @include nzuqi-child-component-theme($theme);
+  @include nzuqi-examples-component-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($nzuqi-theme);
+  @include custom-components-theme($nzuqi-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($nzuqi-light-theme);
+  @include custom-components-theme($nzuqi-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($nzuqi-black-theme);
+  @include custom-components-theme($nzuqi-black-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($nzuqi-nature-theme);
+  @include custom-components-theme($nzuqi-nature-theme);
+}

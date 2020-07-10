@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+@mixin nzuqi-child-component-theme($theme) {
+  $warn: map-get($theme, warn);
+
+  nzuqi-child {
+    > div {
+      border-color: mat-color($warn);
+
+      > h2 {
+        color: mat-color($warn);
+      }
+    }
+  }
+}

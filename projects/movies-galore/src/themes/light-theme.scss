@@ -1,0 +1,9 @@
+$nzuqi-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$nzuqi-light-accent: mat-palette($mat-brown, 200);
+$nzuqi-light-warn: mat-palette($mat-deep-orange, 200);
+
+$nzuqi-light-theme: mat-light-theme(
+  $nzuqi-light-primary,
+  $nzuqi-light-accent,
+  $nzuqi-light-warn
+);
