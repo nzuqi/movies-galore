@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 rtl class="main-heading">{{ 'nzuqi.features.title' | translate }}</h1>
+      <h1 rtl class="main-heading">{{ 'app.features.title' | translate }}</h1>
     </div>
   </div>
   <div class="row align-items-end">
@@ -18,10 +18,10 @@
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
           <a mat-button [href]="feature.documentation" rel="noopener noreferrer" target="_blank">
-            <fa-icon icon="book"></fa-icon>{{ 'nzuqi.features.documentation' | translate }}
+            <fa-icon icon="book"></fa-icon>{{ 'app.features.documentation' | translate }}
           </a>
           <a *ngIf="feature.medium" mat-button [href]="feature.medium" rel="noopener noreferrer" target="_blank">
-            <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'nzuqi.features.guide' | translate }}
+            <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'app.features.guide' | translate }}
           </a>
         </mat-card-actions>
       </mat-card>

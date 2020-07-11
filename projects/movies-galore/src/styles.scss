@@ -25,34 +25,34 @@
 @import './app/features/examples/examples/examples.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
-  @include nzuqi-styles-reset-theme($theme);
-  @include nzuqi-app-component-theme($theme);
-  @include nzuqi-about-component-theme($theme);
-  @include nzuqi-big-input-component-theme($theme);
-  @include nzuqi-notifications-component-theme($theme);
-  @include nzuqi-todos-container-component-theme($theme);
-  @include nzuqi-stock-market-container-component-theme($theme);
-  @include nzuqi-parent-component-theme($theme);
-  @include nzuqi-child-component-theme($theme);
-  @include nzuqi-examples-component-theme($theme);
+  @include app-styles-reset-theme($theme);
+  @include app-app-component-theme($theme);
+  @include app-about-component-theme($theme);
+  @include app-big-input-component-theme($theme);
+  @include app-notifications-component-theme($theme);
+  @include app-todos-container-component-theme($theme);
+  @include app-stock-market-container-component-theme($theme);
+  @include app-parent-component-theme($theme);
+  @include app-child-component-theme($theme);
+  @include app-examples-component-theme($theme);
 }
 
 .default-theme {
-  @include angular-material-theme($nzuqi-theme);
-  @include custom-components-theme($nzuqi-theme);
+  @include angular-material-theme($app-theme);
+  @include custom-components-theme($app-theme);
 }
 
 .light-theme {
-  @include angular-material-theme($nzuqi-light-theme);
-  @include custom-components-theme($nzuqi-light-theme);
+  @include angular-material-theme($app-light-theme);
+  @include custom-components-theme($app-light-theme);
 }
 
 .black-theme {
-  @include angular-material-theme($nzuqi-black-theme);
-  @include custom-components-theme($nzuqi-black-theme);
+  @include angular-material-theme($app-black-theme);
+  @include custom-components-theme($app-black-theme);
 }
 
 .nature-theme {
-  @include angular-material-theme($nzuqi-nature-theme);
-  @include custom-components-theme($nzuqi-nature-theme);
+  @include angular-material-theme($app-nature-theme);
+  @include custom-components-theme($app-nature-theme);
 }

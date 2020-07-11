@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
-      <nzuqi-big-input rtl [placeholder]="'nzuqi.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
+      <app-big-input rtl [placeholder]="'app.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
         (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()">
-        <nzuqi-big-input-action fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
-          (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'nzuqi.examples.todos.tooltip.add' | translate"
+        <app-big-input-action fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
+          (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'app.examples.todos.tooltip.add' | translate"
           matTooltipPosition="before">
-        </nzuqi-big-input-action>
-        <nzuqi-big-input-action fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
+        </app-big-input-action>
+        <app-big-input-action fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
           (action)="onRemoveDoneTodos()" [disabled]="removeDoneDisabled$ | async"
-          [matTooltip]="'nzuqi.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
-        </nzuqi-big-input-action>
-      </nzuqi-big-input>
+          [matTooltip]="'app.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
+        </app-big-input-action>
+      </app-big-input>
     </div>
   </div>
   <div class="row">
     <ng-container *ngIf="todos$ | async as todos">
       <div class="col-md-6">
         <h2 class="dotos-title" rtl>
-          <span>{{ 'nzuqi.examples.todos.list' | translate }}</span>
+          <span>{{ 'app.examples.todos.list' | translate }}</span>
           <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
             <fa-icon icon="filter"></fa-icon>
           </button>
@@ -27,30 +27,30 @@
               <mat-icon>
                 <fa-icon icon="tasks"></fa-icon>
               </mat-icon>
-              <span>{{ 'nzuqi.examples.todos.filter.all' | translate }}</span>
+              <span>{{ 'app.examples.todos.filter.all' | translate }}</span>
             </button>
             <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
               <mat-icon>
                 <fa-icon icon="check"></fa-icon>
               </mat-icon>
-              <span>{{ 'nzuqi.examples.todos.filter.done' | translate }}</span>
+              <span>{{ 'app.examples.todos.filter.done' | translate }}</span>
             </button>
             <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
               <mat-icon>
                 <fa-icon icon="square"></fa-icon>
               </mat-icon>
-              <span>{{ 'nzuqi.examples.todos.filter.active' | translate }}</span>
+              <span>{{ 'app.examples.todos.filter.active' | translate }}</span>
             </button>
           </mat-menu>
           <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
             <mat-chip [disabled]=true [ngPlural]="todos.length">
-              {{ 'nzuqi.examples.todos.filter.description' | translate }}
-              <ng-template ngPluralCase="other">{{ todos.length }} {{ 'nzuqi.examples.todos.filter.items' |
+              {{ 'app.examples.todos.filter.description' | translate }}
+              <ng-template ngPluralCase="other">{{ todos.length }} {{ 'app.examples.todos.filter.items' |
                 translate }}</ng-template>
-              <ng-template ngPluralCase="=1">{{ 'nzuqi.examples.todos.filter.one' | translate }} {{
-                'nzuqi.examples.todos.filter.item' | translate }}</ng-template>
-              <ng-template ngPluralCase="=0">{{ 'nzuqi.examples.todos.filter.none' | translate }} {{
-                'nzuqi.examples.todos.filter.items' | translate }}</ng-template>
+              <ng-template ngPluralCase="=1">{{ 'app.examples.todos.filter.one' | translate }} {{
+                'app.examples.todos.filter.item' | translate }}</ng-template>
+              <ng-template ngPluralCase="=0">{{ 'app.examples.todos.filter.none' | translate }} {{
+                'app.examples.todos.filter.items' | translate }}</ng-template>
             </mat-chip>
           </mat-chip-list>
         </h2>
@@ -65,17 +65,17 @@
       </div>
   </ng-container>
     <div class="offset-md-1 col-md-5" [ngClass]="routeAnimationsElements" rtl>
-      <h2>{{ 'nzuqi.examples.todos.example' | translate }}</h2>
+      <h2>{{ 'app.examples.todos.example' | translate }}</h2>
       <p>
-        {{ 'nzuqi.examples.todos.text1' | translate }}
-        <code>{{ 'nzuqi.examples.todos.text2' | translate }}</code>
-        {{ 'nzuqi.examples.todos.text3' | translate }}
+        {{ 'app.examples.todos.text1' | translate }}
+        <code>{{ 'app.examples.todos.text2' | translate }}</code>
+        {{ 'app.examples.todos.text3' | translate }}
       </p>
       <p>
-        {{ 'nzuqi.examples.todos.text4' | translate }} <code>ngrx</code>
-        {{ 'nzuqi.examples.todos.text5' | translate }}
+        {{ 'app.examples.todos.text4' | translate }} <code>ngrx</code>
+        {{ 'app.examples.todos.text5' | translate }}
       </p>
-      <p>{{ 'nzuqi.examples.todos.text6' | translate }}</p>
+      <p>{{ 'app.examples.todos.text6' | translate }}</p>
       <br>
     </div>
   </div>

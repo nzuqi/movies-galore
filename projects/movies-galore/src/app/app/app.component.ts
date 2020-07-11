@@ -21,7 +21,7 @@ import {
 } from '../core/settings/settings.actions';
 
 @Component({
-  selector: 'nzuqi-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
@@ -34,13 +34,13 @@ export class AppComponent implements OnInit {
   logo = require('../../assets/logo.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   navigation = [
-    { link: 'about', label: 'nzuqi.menu.about' },
-    { link: 'feature-list', label: 'nzuqi.menu.features' },
-    { link: 'examples', label: 'nzuqi.menu.examples' }
+    { link: 'about', label: 'app.menu.about' },
+    { link: 'feature-list', label: 'app.menu.features' },
+    { link: 'examples', label: 'app.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'nzuqi.menu.settings' }
+    { link: 'settings', label: 'app.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;

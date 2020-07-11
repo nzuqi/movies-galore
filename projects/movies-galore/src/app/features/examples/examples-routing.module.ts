@@ -27,17 +27,17 @@ const routes: Routes = [
       {
         path: 'todos',
         component: TodosContainerComponent,
-        data: { title: 'nzuqi.examples.menu.todos' }
+        data: { title: 'app.examples.menu.todos' }
       },
       {
         path: 'stock-market',
         component: StockMarketContainerComponent,
-        data: { title: 'nzuqi.examples.menu.stocks' }
+        data: { title: 'app.examples.menu.stocks' }
       },
       {
         path: 'theming',
         component: ParentComponent,
-        data: { title: 'nzuqi.examples.menu.theming' }
+        data: { title: 'app.examples.menu.theming' }
       },
       {
         path: 'crud',
@@ -47,33 +47,33 @@ const routes: Routes = [
       {
         path: 'crud/:id',
         component: CrudComponent,
-        data: { title: 'nzuqi.examples.menu.crud' }
+        data: { title: 'app.examples.menu.crud' }
       },
       {
         path: 'simple-state-management',
         component: UserComponent,
-        data: { title: 'nzuqi.examples.menu.simple-state-management' }
+        data: { title: 'app.examples.menu.simple-state-management' }
       },
       {
         path: 'form',
         component: FormComponent,
-        data: { title: 'nzuqi.examples.menu.form' }
+        data: { title: 'app.examples.menu.form' }
       },
       {
         path: 'notifications',
         component: NotificationsComponent,
-        data: { title: 'nzuqi.examples.menu.notifications' }
+        data: { title: 'app.examples.menu.notifications' }
       },
       {
         path: 'elements',
         component: ElementsComponent,
-        data: { title: 'nzuqi.examples.menu.elements' }
+        data: { title: 'app.examples.menu.elements' }
       },
       {
         path: 'authenticated',
         component: AuthenticatedComponent,
         canActivate: [AuthGuardService],
-        data: { title: 'nzuqi.examples.menu.auth' }
+        data: { title: 'app.examples.menu.auth' }
       }
     ]
   }

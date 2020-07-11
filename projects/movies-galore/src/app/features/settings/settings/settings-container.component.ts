@@ -16,7 +16,7 @@ import { SettingsState, State } from '../../../core/settings/settings.model';
 import { selectSettings } from '../../../core/settings/settings.selectors';
 
 @Component({
-  selector: 'nzuqi-settings',
+  selector: 'app-settings',
   templateUrl: './settings-container.component.html',
   styleUrls: ['./settings-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

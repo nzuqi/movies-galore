@@ -43,7 +43,7 @@ describe('TodosComponent', () => {
   };
 
   const getTodoInput = () =>
-    fixture.debugElement.query(By.css('nzuqi-big-input input'));
+    fixture.debugElement.query(By.css('app-big-input input'));
 
   const getTodoItems = () => fixture.debugElement.queryAll(By.css('.todo'));
 
@@ -51,14 +51,14 @@ describe('TodosComponent', () => {
 
   const getAddTodoButton = async () => {
     const buttons = await loader.getAllHarnesses(
-      MatButtonHarness.with({ selector: 'nzuqi-big-input-action button' })
+      MatButtonHarness.with({ selector: 'app-big-input-action button' })
     );
     return buttons[0];
   };
 
   const getRemoveDoneTodosButton = async () => {
     const buttons = await loader.getAllHarnesses(
-      MatButtonHarness.with({ selector: 'nzuqi-big-input-action button' })
+      MatButtonHarness.with({ selector: 'app-big-input-action button' })
     );
     return buttons[1];
   };

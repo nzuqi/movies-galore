@@ -13,7 +13,7 @@
       },
       "root": "projects/movies-galore",
       "sourceRoot": "projects/movies-galore/src",
-      "prefix": "nzuqi",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

@@ -2,7 +2,7 @@
 
 @import '../../../../../styles-variables';
 
-@mixin nzuqi-notifications-component-theme($theme) {
+@mixin app-notifications-component-theme($theme) {
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
 

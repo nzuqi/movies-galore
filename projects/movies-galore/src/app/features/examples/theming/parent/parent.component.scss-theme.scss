@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin nzuqi-parent-component-theme($theme) {
+@mixin app-parent-component-theme($theme) {
   $accent: map-get($theme, accent);
 
-  nzuqi-parent {
+  app-parent {
     > .container {
       > .row {
         > .col-md-6 {

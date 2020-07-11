@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: SettingsContainerComponent,
-    data: { title: 'nzuqi.menu.settings' }
+    data: { title: 'app.menu.settings' }
   }
 ];
 

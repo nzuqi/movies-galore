@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h1 rtl class="main-heading">
-        {{ 'nzuqi.examples.simple-state-management.title' | translate }}
+        {{ 'app.examples.simple-state-management.title' | translate }}
       </h1>
     </div>
   </div>
@@ -28,60 +28,60 @@
         </mat-card>
       </ng-container>
       <ng-container *ngIf="isEdit$ | async as isEdit">
-      <h2 *ngIf="!isEdit.value">{{'nzuqi.examples.simple-state-management.form.add.title' | translate}}</h2>
-      <h2 *ngIf="isEdit.value">{{'nzuqi.examples.simple-state-management.form.edit.title' | translate}}</h2>
+      <h2 *ngIf="!isEdit.value">{{'app.examples.simple-state-management.form.add.title' | translate}}</h2>
+      <h2 *ngIf="isEdit.value">{{'app.examples.simple-state-management.form.edit.title' | translate}}</h2>
       <form [formGroup]="userForm" #userFormRef="ngForm" (ngSubmit)="onSubmit(userFormRef)">
         <mat-form-field>
           <input
             matInput
             [placeholder]="
-              ('nzuqi.examples.simple-state-management.username' | translate) + '*'
+              ('app.examples.simple-state-management.username' | translate) + '*'
             "
             formControlName="username"
           />
           <mat-error *ngIf="userForm.get('username').hasError('minlength')">
-            {{'nzuqi.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('username').errors.minlength.requiredLength} }}
+            {{'app.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('username').errors.minlength.requiredLength} }}
           </mat-error>
           <mat-error *ngIf="userForm.get('username').hasError('required')">
-            {{'nzuqi.examples.simple-state-management.validator.required' | translate}}
+            {{'app.examples.simple-state-management.validator.required' | translate}}
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
             [placeholder]="
-              ('nzuqi.examples.simple-state-management.name' | translate) + '*'
+              ('app.examples.simple-state-management.name' | translate) + '*'
             "
             formControlName="name"
           />
           <mat-error *ngIf="userForm.get('name').hasError('minlength')">
-            {{'nzuqi.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('name').errors.minlength.requiredLength} }}
+            {{'app.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('name').errors.minlength.requiredLength} }}
           </mat-error>
           <mat-error *ngIf="userForm.get('name').hasError('required')">
-            {{'nzuqi.examples.simple-state-management.validator.required' | translate}}
+            {{'app.examples.simple-state-management.validator.required' | translate}}
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
             [placeholder]="
-              ('nzuqi.examples.simple-state-management.surname' | translate) + '*'
+              ('app.examples.simple-state-management.surname' | translate) + '*'
             "
             formControlName="surname"
           />
           <mat-error *ngIf="userForm.get('surname').hasError('minlength')">
-            {{'nzuqi.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('surname').errors.minlength.requiredLength} }}
+            {{'app.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('surname').errors.minlength.requiredLength} }}
           </mat-error>
           <mat-error *ngIf="userForm.get('surname').hasError('required')">
-            {{'nzuqi.examples.simple-state-management.validator.required' | translate}}
+            {{'app.examples.simple-state-management.validator.required' | translate}}
           </mat-error>
         </mat-form-field>
         <div>
           <button *ngIf="!isEdit.value" type="submit" mat-raised-button color="primary">
-            {{'nzuqi.examples.simple-state-management.form.add.submit' | translate}}
+            {{'app.examples.simple-state-management.form.add.submit' | translate}}
           </button>
           <button *ngIf="isEdit.value" type="submit" mat-raised-button color="primary">
-            {{'nzuqi.examples.simple-state-management.form.edit.submit' | translate}}
+            {{'app.examples.simple-state-management.form.edit.submit' | translate}}
           </button>
           <button type="reset" mat-button color="warn">Reset</button>
         </div>
@@ -89,21 +89,21 @@
       </ng-container>
     </div>
     <div class="col-md-12 col-lg-6" [ngClass]="routeAnimationsElements">
-      <p>{{ 'nzuqi.examples.simple-state-management.text1' | translate }}</p>
-      <p>{{ 'nzuqi.examples.simple-state-management.text2' | translate }}</p>
+      <p>{{ 'app.examples.simple-state-management.text1' | translate }}</p>
+      <p>{{ 'app.examples.simple-state-management.text2' | translate }}</p>
       <p>
-        {{ 'nzuqi.examples.simple-state-management.text3' | translate }}
+        {{ 'app.examples.simple-state-management.text3' | translate }}
         <code>@angular-extensions/model</code>
       </p>
-      <p>{{ 'nzuqi.examples.simple-state-management.text4' | translate }}</p>
+      <p>{{ 'app.examples.simple-state-management.text4' | translate }}</p>
       <p>
-        {{ 'nzuqi.examples.simple-state-management.text5' | translate }}
+        {{ 'app.examples.simple-state-management.text5' | translate }}
         <a href="https://github.com/angular-extensions/model" rel="noopener noreferrer" target="_blank">{{
-          'nzuqi.examples.simple-state-management.text6' | translate
+          'app.examples.simple-state-management.text6' | translate
         }}</a>
       </p>
       <p>
-        {{ 'nzuqi.examples.simple-state-management.text7' | translate }}
+        {{ 'app.examples.simple-state-management.text7' | translate }}
         <code>ng add @angular-extensions/model</code> &
         <code>ng g @angular-extensions/model:model examples/user --items</code>
       </p>

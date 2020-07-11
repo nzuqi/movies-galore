@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin nzuqi-stock-market-container-component-theme($theme) {
+@mixin app-stock-market-container-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  nzuqi-stock-market {
+  app-stock-market {
     mat-card {
       .negative {
         color: mat-color($warn);

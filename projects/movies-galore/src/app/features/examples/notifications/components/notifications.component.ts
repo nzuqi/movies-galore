@@ -6,7 +6,7 @@ import {
 } from '../../../../core/core.module';
 
 @Component({
-  selector: 'nzuqi-notifications',
+  selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,12 +1,12 @@
 @import '~@angular/material/theming';
 
-@mixin nzuqi-big-input-component-theme($theme) {
+@mixin app-big-input-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  nzuqi-big-input {
+  app-big-input {
     .big-input {
       input {
         color: mat-color($foreground, text);

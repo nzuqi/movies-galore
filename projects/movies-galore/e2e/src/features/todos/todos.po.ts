@@ -6,11 +6,11 @@ export class TodosPage {
   }
 
   getInput() {
-    return element(by.css('nzuqi-big-input input'));
+    return element(by.css('app-big-input input'));
   }
 
   getAddTodoButton() {
-    return element(by.css('nzuqi-big-input-action button'));
+    return element(by.css('app-big-input-action button'));
   }
 
   getResults() {

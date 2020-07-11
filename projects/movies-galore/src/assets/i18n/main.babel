@@ -6,7 +6,7 @@
         <name></name>
         <children>
             <folder_node>
-                <name>nzuqi</name>
+                <name>app</name>
                 <children>
                     <folder_node>
                         <name>about</name>

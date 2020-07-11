@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: AboutComponent,
-    data: { title: 'nzuqi.menu.about' }
+    data: { title: 'app.menu.about' }
   }
 ];
 

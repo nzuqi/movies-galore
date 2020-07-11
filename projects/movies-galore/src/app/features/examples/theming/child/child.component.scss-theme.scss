@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin nzuqi-child-component-theme($theme) {
+@mixin app-child-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  nzuqi-child {
+  app-child {
     > div {
       border-color: mat-color($warn);
 
