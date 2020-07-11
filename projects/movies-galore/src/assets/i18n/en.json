@@ -37,6 +37,7 @@
   "app.menu.login": "Sign in",
   "app.menu.logout": "Logout",
   "app.menu.settings": "Settings",
+  "app.menu.profile": "My Profile",
   "app.settings.animations.elements": "Navigation page elements slide up",
   "app.settings.animations.page": "Navigation whole page transition",
   "app.settings.animations.title": "Animations",
@@ -60,6 +61,6 @@
   "app.settings.themes.sticky-header": "Sticky header",
   "app.settings.themes.title": "Themes",
   "app.settings.title": "Settings",
-  "app.title.long": "Angular NgRx Material Starter",
-  "app.title.short": "Angular Starter"
+  "app.title.long": "Movies Galore",
+  "app.title.short": "Movies Galore"
 }

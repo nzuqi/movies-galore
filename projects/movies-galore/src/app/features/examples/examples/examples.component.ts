@@ -21,7 +21,7 @@ export class ExamplesComponent implements OnInit {
 
   examples = [
     { link: 'todos', label: 'app.examples.menu.todos' },
-    { link: 'stock-market', label: 'app.examples.menu.stocks' },
+    // { link: 'stock-market', label: 'app.examples.menu.stocks' },
     { link: 'theming', label: 'app.examples.menu.theming' },
     { link: 'crud', label: 'app.examples.menu.crud' },
     {

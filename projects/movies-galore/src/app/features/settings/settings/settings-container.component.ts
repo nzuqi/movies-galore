@@ -34,13 +34,7 @@ export class SettingsContainerComponent implements OnInit {
 
   languages = [
     { value: 'en', label: 'English' },
-    { value: 'de', label: 'Deutsch' },
-    { value: 'sk', label: 'Slovenčina' },
-    { value: 'fr', label: 'Français' },
-    { value: 'es', label: 'Español' },
-    { value: 'pt-br', label: 'Português' },
-    { value: 'zh-cn', label: '简体中文' },
-    { value: 'he', label: 'עברית' }
+    { value: 'sw', label: 'Swahili' }
   ];
 
   constructor(private store: Store<State>) {}

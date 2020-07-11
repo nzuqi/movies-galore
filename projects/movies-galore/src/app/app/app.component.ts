@@ -17,7 +17,8 @@ import {
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
-  actionSettingsChangeLanguage
+  actionSettingsChangeLanguage,
+  actionSettingsChangeTheme
 } from '../core/settings/settings.actions';
 
 @Component({
@@ -31,8 +32,15 @@ export class AppComponent implements OnInit {
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-  logo = require('../../assets/logo.png');
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  logo = '../../assets/logo_full.png';
+  logo_sm = '../../assets/logo.png';
+  languages = ['en', 'sw'];
+  themes = [
+    { value: 'DEFAULT-THEME', label: 'blue' },
+    { value: 'LIGHT-THEME', label: 'light' },
+    // { value: 'NATURE-THEME', label: 'nature' },
+    { value: 'BLACK-THEME', label: 'dark' }
+  ];
   navigation = [
     { link: 'about', label: 'app.menu.about' },
     { link: 'feature-list', label: 'app.menu.features' },
@@ -83,5 +91,9 @@ export class AppComponent implements OnInit {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  }
+
+  onThemeSelect({ value: theme }) {
+    this.store.dispatch(actionSettingsChangeTheme({ theme }));
   }
 }

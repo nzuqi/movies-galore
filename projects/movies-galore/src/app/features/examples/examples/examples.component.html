@@ -1,4 +1,5 @@
 <nav mat-tab-nav-bar class="d-none d-sm-flex">
+  <div class="container">
   <a mat-tab-link
      *ngFor="let e of examples"
      [routerLink]="e.link"
@@ -6,7 +7,7 @@
      [active]="rla.isActive"
      [disabled]="e.auth && !(isAuthenticated$ | async)">
     {{e.label | translate}}
-  </a>
+  </a></div>
 </nav>
 
 <nav class="nav-responsive d-sm-none d-flex justify-content-center">
