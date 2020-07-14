@@ -36,11 +36,11 @@
             <div style="float: right;">
               <span class="d-none d-md-inline">
                 <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
-                  {{item.label | translate}}
+                  {{item.label | translate | uppercase}}
                 </button>
               </span>
-              <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
-                {{ 'app.menu.login' | translate }}
+              <button mat-button mat-stroked-button color="warn" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
+                {{ 'app.menu.login' | translate | uppercase }}
               </button>
 
               <button *ngIf="(isAuthenticated$ | async)" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
@@ -52,14 +52,14 @@
               </mat-menu>
 
               <span *ngIf="language$ | async as language">
-                <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
+                <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)" style="opacity: 0.4;">
                   <mat-option *ngFor="let l of languages" [value]="l">
                     {{ l.toUpperCase() }}
                   </mat-option>
                 </mat-select>
               </span>
               <span *ngIf="theme$ | async as theme">
-                <mat-select [ngModel]="theme" (selectionChange)="onThemeSelect($event)" style="width: 60px;">
+                <mat-select [ngModel]="theme" (selectionChange)="onThemeSelect($event)" style="width: 60px; opacity: 0.4;">
                   <mat-option *ngFor="let t of themes" [value]="t.value.toLowerCase()">
                     {{ t.label.toUpperCase() }}
                   </mat-option>
@@ -75,45 +75,15 @@
       </div>
 
       <div class="footer">
-        <div class="row d-none">
-          <div class="col-sm-12 links">
-            <a href="https://www.github.com/tomastrajan" target="_blank" rel="noopener noreferrer">
-              <fa-icon [icon]="['fab','github']"></fa-icon>
-              <span>Github</span>
-            </a>
-            <a href="https://www.medium.com/@tomastrajan" target="_blank" rel="noopener noreferrer">
-              <fa-icon [icon]="['fab','medium-m']"></fa-icon>
-              <span>Medium</span>
-            </a>
-            <a href="https://www.twitter.com/tomastrajan" target="_blank" rel="noopener noreferrer">
-              <fa-icon [icon]="['fab','twitter']"></fa-icon>
-              <span>Twitter</span>
-            </a>
-            <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ"
-               target="_blank" rel="noopener noreferrer">
-              <fa-icon [icon]="['fab','youtube']"></fa-icon>
-              <span>Youtube</span>
-            </a>
-            <a href="https://www.instagram.com/tomastrajan" target="_blank" rel="noopener noreferrer">
-              <fa-icon [icon]="['fab','instagram']"></fa-icon>
-              <span>Instagram</span>
-            </a>
-            <a href="https://www.slides.com/tomastrajan" target="_blank" rel="noopener noreferrer">
-              <fa-icon icon="play-circle"></fa-icon>
-              <span>Slides</span>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 signature">
-            &#169; <span class="year">{{year}}</span> - Martin Nzuki
-            <br class="d-block d-sm-none">
-            <a [matTooltip]="'app.footer.changelog' | translate"
-               matTooltipPosition="before"
-               href="https://github.com/nzuqi/movies-galore/blob/master/CHANGELOG.md">
-              <fa-icon icon="rocket"></fa-icon>
-              {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
-            </a>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 signature">
+              <small>
+                &#169; <span class="year">{{year}}</span> ~ Martin Nzuki
+                <br class="d-block d-sm-none">
+                <a style="opacity: 0.4;" [matTooltip]="'app.footer.changelog' | translate" matTooltipPosition="before" href="https://github.com/nzuqi/movies-galore/blob/master/CHANGELOG.md">v{{version}} <span *ngIf="!isProd">[{{envName}}]</span></a>
+              </small>
+            </div>
           </div>
         </div>
       </div>

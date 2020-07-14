@@ -33,7 +33,7 @@ import { ElementsComponent } from './elements/elements.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
     http,
-    `${environment.i18nPrefix}/assets/i18n/examples/`,
+    `${environment.i18nPrefix}/assets/i18n/`,
     '.json'
   );
 }

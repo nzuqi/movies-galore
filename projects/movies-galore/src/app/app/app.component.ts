@@ -42,13 +42,12 @@ export class AppComponent implements OnInit {
     { value: 'BLACK-THEME', label: 'dark' }
   ];
   navigation = [
-    { link: 'about', label: 'app.menu.about' },
-    { link: 'feature-list', label: 'app.menu.features' },
-    { link: 'examples', label: 'app.menu.examples' }
+    { link: 'movies', label: 'app.movies' },
+    { link: 'about', label: 'app.about' }
   ];
   navigationSideMenu = [
-    ...this.navigation,
-    { link: 'settings', label: 'app.menu.settings' }
+    ...this.navigation
+    // { link: 'settings', label: 'app.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;
