@@ -6,6 +6,7 @@ export const environment = {
   production: true,
   test: false,
   i18nPrefix: '/movies-galore',
+  serverUrl: 'https://movies-galore-server.herokuapp.com',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],

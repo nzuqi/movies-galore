@@ -1,1 +1,25 @@
-<p>library works!</p>
+<div class="container">
+    <div class="row" *ngIf="search_query && !loading" [ngClass]="routeAnimationsElements">
+      <div class="col-md-12 my-3">
+        <h1 rtl class="main-heading">{{ shows.length }} {{ 'app.movies.search.results' | translate }} "{{ search_query }}"</h1>
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div *ngFor="let show of shows" class="col-md-6 col-lg-2" [ngClass]="routeAnimationsElements">
+        <mat-card [ngClass]="{'loading': loading}" [ngStyle]="{'background': 'url(' + show.image_medium + ') center no-repeat', 'background-size': 'cover'}">
+            <div class="_tint"></div>
+            <mat-card-title>{{ show.name }}</mat-card-title>
+            <mat-card-actions>
+                <code *ngIf="show.rating" title="Rating">{{show.rating}}</code>
+                <!-- <a *ngIf="show.github" mat-icon-button [href]="show.github" rel="noopener noreferrer" target="_blank">
+                    <fa-icon [icon]="['fab','github']"></fa-icon> 
+                </a>
+                <a mat-button [href]="show.documentation" rel="noopener noreferrer" target="_blank">
+                    <fa-icon icon="book"></fa-icon>
+                </a> -->
+            </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

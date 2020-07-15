@@ -42,7 +42,8 @@ export class AppComponent implements OnInit {
     { value: 'BLACK-THEME', label: 'dark' }
   ];
   navigation = [
-    { link: 'movies', label: 'app.movies' },
+    { link: '', label: 'app.movies.search' },
+    { link: 'movies/library', label: 'app.movies' },
     { link: 'about', label: 'app.about' }
   ];
   navigationSideMenu = [

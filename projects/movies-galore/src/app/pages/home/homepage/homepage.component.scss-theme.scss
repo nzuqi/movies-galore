@@ -6,7 +6,7 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  app-about {
+  app-homepage {
     .background {
       color: mat-color($foreground, text);
       background-color: mat-color($background, background);

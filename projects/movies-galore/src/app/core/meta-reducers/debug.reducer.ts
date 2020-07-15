@@ -7,11 +7,11 @@ export function debug(
 ): ActionReducer<AppState> {
   return function(state, action) {
     const newState = reducer(state, action);
-    console.log(`[DEBUG] action: ${action.type}`, {
-      payload: (<any>action).payload,
-      oldState: state,
-      newState
-    });
+    // console.log(`[DEBUG] action: ${action.type}`, {
+    //   payload: (<any>action).payload,
+    //   oldState: state,
+    //   newState
+    // });
     return newState;
   };
 }

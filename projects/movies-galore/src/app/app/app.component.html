@@ -34,11 +34,13 @@
             </span>
 
             <div style="float: right;">
+
               <span class="d-none d-md-inline">
-                <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
+                <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">
                   {{item.label | translate | uppercase}}
                 </button>
               </span>
+
               <button mat-button mat-stroked-button color="warn" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
                 {{ 'app.menu.login' | translate | uppercase }}
               </button>
@@ -58,13 +60,13 @@
                   </mat-option>
                 </mat-select>
               </span>
-              <span *ngIf="theme$ | async as theme">
+              <!-- <span *ngIf="theme$ | async as theme">
                 <mat-select [ngModel]="theme" (selectionChange)="onThemeSelect($event)" style="width: 60px; opacity: 0.4;">
                   <mat-option *ngFor="let t of themes" [value]="t.value.toLowerCase()">
                     {{ t.label.toUpperCase() }}
                   </mat-option>
                 </mat-select>
-              </span>
+              </span> -->
             </div>
           </div>
         </mat-toolbar>
@@ -74,7 +76,7 @@
         <router-outlet #o="outlet"></router-outlet>
       </div>
 
-      <div class="footer">
+      <div class="footer d-none">
         <div class="container">
           <div class="row">
             <div class="col-12 signature">

@@ -17,13 +17,22 @@ import { environment } from '../../../environments/environment';
 import { FEATURE_NAME, reducers } from './movies.state';
 import { MoviesEffects } from './movies.effects';
 
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
 const routes: Routes = [
   {
     path: '',
     component: MoviesComponent,
     children: [
       {
-        path: 'movies',
+        path: '',
+        redirectTo: 'library',
+        pathMatch: 'full'
+      },
+      {
+        path: 'library',
         component: LibraryComponent,
         data: { title: 'app.movies' }
       }
@@ -56,7 +65,25 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
       isolate: true
     }),
-    EffectsModule.forFeature([MoviesEffects])
+    EffectsModule.forFeature([MoviesEffects]),
+
+    // Apollo
+    ApolloModule,
+    HttpLinkModule
+  ],
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) => {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: environment.serverUrl
+          })
+        };
+      },
+      deps: [HttpLink]
+    }
   ]
 })
 export class MoviesModule {}

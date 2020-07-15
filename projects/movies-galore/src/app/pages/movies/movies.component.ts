@@ -16,10 +16,9 @@ export class MoviesComponent implements OnInit {
 
   pages = [
     { link: './', label: 'app.movies.library' },
-    { link: 'search', label: 'app.movies.search' },
+    // { link: 'search', label: 'app.movies.search' },
     { link: 'future-episodes', label: 'app.movies.schedule' },
     // { link: 'people', label: 'app.movies.people' },
-
     { link: 'watch-later', label: 'app.movies.later', auth: true },
     { link: 'my-favorites', label: 'app.movies.favorites', auth: true },
     { link: 'my-comments', label: 'app.movies.comments', auth: true }
