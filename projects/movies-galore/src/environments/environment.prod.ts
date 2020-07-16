@@ -5,7 +5,7 @@ export const environment = {
   envName: 'PROD',
   production: true,
   test: false,
-  i18nPrefix: '/movies-galore',
+  i18nPrefix: '',
   serverUrl: 'https://movies-galore-server.herokuapp.com',
   versions: {
     app: packageJson.version,
