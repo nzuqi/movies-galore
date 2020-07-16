@@ -26,7 +26,8 @@
             "aot": true,
             "assets": [
               "projects/movies-galore/src/favicon.ico",
-              "projects/movies-galore/src/assets"
+              "projects/movies-galore/src/assets",
+              "projects/movies-galore/src/.htaccess"
             ],
             "styles": [
               "projects/movies-galore/src/styles-app-loading.scss",

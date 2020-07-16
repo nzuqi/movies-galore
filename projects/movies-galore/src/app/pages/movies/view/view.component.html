@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row" [ngClass]="routeAnimationsElements">
+      <div class="col-md-12 my-3">
+        <h1 rtl class="main-heading">{{ show.name }}</h1>
+      </div>
+    </div>
+    <ng-container *ngIf="!loading">
+        <div class="row">
+            <div class="col-md-3"><img src="{{ show.image_medium }}" alt="{{ show.name }}" style="max-width: 100%;"></div>
+            <div class="col-md-9">
+                <div class="genres mb-3" *ngIf="show.genres">
+                    <code *ngFor="let genre of show.genres" class="mr-2 mb-2 px-3">{{ genre }}</code>
+                </div>
+                <div [innerHTML]="show.summary"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info p-3 my-2">
+                            <h6 *ngIf="show.rating" style="color: rgb(0, 216, 0); font-size: 20px;"><strong>Rating:</strong> {{ show.rating }}</h6>
+                            <h6 *ngIf="show.type"><strong>Type:</strong> {{ show.type }}</h6>
+                            <h6 *ngIf="show.language"><strong>Language:</strong> {{ show.language }}</h6>
+                            <h6 *ngIf="show.status"><strong>Status:</strong> {{ show.status }}</h6>
+                            <h6 *ngIf="show.premiered"><strong>Premiered:</strong> {{ show.premiered | date }}</h6>
+                            <h6 *ngIf="show.officialSite"><strong>Official:</strong> &nbsp;<a href="{{ show.officialSite }}" target="_blank">{{ show.officialSite }}</a></h6>
+                            <h6 *ngIf="show.updated"><strong>Updated:</strong> {{ show.updated * 1000 | date }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-md-12">
+                <mat-tab-group>
+                    <mat-tab label="Episodes">
+                        <div class="row">
+                            <div class="col-md-12 py-3">
+                                <mat-accordion>
+                                    <ng-container *ngFor="let season of episodes; let i = index">
+                                        <mat-expansion-panel (opened)="seasonsPanel[i] = true" (closed)="seasonsPanel[i] = false">
+                                            <mat-expansion-panel-header>
+                                                <mat-panel-title>
+                                                    Season {{ i+1 }} <span class="pl-5" style="opacity: 0.7;">{{ season.length }} {{ (season.length == 1) ? 'episode' : 'episodes' }}</span>
+                                                </mat-panel-title>
+                                                <mat-panel-description>
+                                                    From {{ season[0].airdate | date }} to {{ season[season.length - 1].airdate | date }}
+                                                </mat-panel-description>
+                                            </mat-expansion-panel-header>
+                                            <div>
+                                                <ng-container *ngFor="let episode of season; let j = index">
+                                                    <div class="row py-3">
+                                                        <div class="col-md-3">
+                                                            <img src="{{ episode.image_medium }}" alt="{{ episode.name }}" style="max-width: 100%;">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <h4 rtl class="main-heading" style="font-size: 16px;"><span style="opacity: 0.6">Episode {{ episode.number }},</span> "{{ episode.name }}"</h4>
+                                                            <div [innerHTML]="episode.summary"></div>
+                                                            <p class="m-0"><small><strong style="opacity: 0.7">Air Date:</strong> {{ episode.airdate | date }}</small></p>
+                                                            <p class="m-0"><small><strong style="opacity: 0.7">Air Time:</strong> {{ episode.airtime }}</small></p>
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </mat-expansion-panel>
+                                    </ng-container>
+                                </mat-accordion>                                  
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Cast">
+                        <div class="row py-3">
+                            <ng-container *ngFor="let _cast of cast; let i = index;">
+                                <div class="col-md-4 py-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="{{ _cast.image_medium }}" alt="{{ _cast.name }}" style="max-width: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <h4 rtl class="main-heading" style="font-size: 16px;">{{ _cast.name }}</h4>
+                                            <p class="m-0" *ngIf="_cast.gender"><small><strong style="opacity: 0.7">Gender:</strong> {{ _cast.gender }}</small></p>
+                                            <p class="m-0" *ngIf="_cast.birthday"><small><strong style="opacity: 0.7">Born:</strong> {{ _cast.birthday | date }}</small></p>
+                                            <p class="m-0" *ngIf="_cast.country_name"><small><strong style="opacity: 0.7">Country:</strong> {{ _cast.country_name }}, {{ _cast.country_code }}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Crew">
+                        <div class="row py-3">
+                            <ng-container *ngFor="let _crew of crew; let i = index;">
+                                <div class="col-md-4 py-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="{{ _crew.image_medium }}" alt="{{ _crew.name }}" style="max-width: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <h4 rtl class="main-heading" style="font-size: 16px;">{{ _crew.name }}</h4>
+                                            <h4 rtl class="main-heading" style="font-size: 14px;opacity: 0.7">{{ _crew.type }}</h4>
+                                            <p class="m-0" *ngIf="_crew.gender"><small><strong style="opacity: 0.7">Gender:</strong> {{ _crew.gender }}</small></p>
+                                            <p class="m-0" *ngIf="_crew.birthday"><small><strong style="opacity: 0.7">Born:</strong> {{ _crew.birthday | date }}</small></p>
+                                            <p class="m-0" *ngIf="_crew.country_name"><small><strong style="opacity: 0.7">Country:</strong> {{ _crew.country_name }}, {{ _crew.country_code }}</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </ng-container>
+  </div>
+  

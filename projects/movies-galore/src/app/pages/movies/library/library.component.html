@@ -6,7 +6,7 @@
     </div>
     <div class="row align-items-end">
       <div *ngFor="let show of shows" class="col-md-6 col-lg-2" [ngClass]="routeAnimationsElements">
-        <mat-card [ngClass]="{'loading': loading}" [ngStyle]="{'background': 'url(' + show.image_medium + ') center no-repeat', 'background-size': 'cover'}">
+        <mat-card routerLink='/movies/details/{{ show.id }}' [ngClass]="{'loading': loading}" [ngStyle]="{'background': 'url(' + show.image_medium + ') center no-repeat', 'background-size': 'cover'}">
             <div class="_tint"></div>
             <mat-card-title>{{ show.name }}</mat-card-title>
             <mat-card-actions>
@@ -20,6 +20,13 @@
             </mat-card-actions>
         </mat-card>
       </div>
+    </div>
+    <div class="row my-5 align-items-end">
+        <div class="col-md-12">
+            <button mat-button *ngIf="shows.length > 0" (click)="loadMore()">
+                {{ 'app.movies.library.more' | translate }}
+            </button>
+        </div>
     </div>
   </div>
   

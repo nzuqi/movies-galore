@@ -43,8 +43,8 @@ export class AppComponent implements OnInit {
   ];
   navigation = [
     { link: '', label: 'app.movies.search' },
-    { link: 'movies/library', label: 'app.movies' },
-    { link: 'about', label: 'app.about' }
+    { link: 'movies/library', label: 'app.movies' }
+    // { link: 'about', label: 'app.about' }
   ];
   navigationSideMenu = [
     ...this.navigation

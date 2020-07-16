@@ -22,10 +22,11 @@ export class LibraryComponent implements OnInit {
   loading = true;
   error: any;
   search_query: string = '';
+  current_page: number = 0;
 
   _shows = gql`
-    query shows($searchQuery: String) {
-      shows(searchQuery: $searchQuery) {
+    query shows($pageId: Int, $searchQuery: String) {
+      shows(pageId: $pageId, searchQuery: $searchQuery) {
         id
         name
         type
@@ -48,7 +49,19 @@ export class LibraryComponent implements OnInit {
     private cd: ChangeDetectorRef,
     private activatedRoute: ActivatedRoute
   ) {
-    for (let i = 0; i <= 12; i++) {
+    this._initLoading();
+    this.search_query = this.activatedRoute.snapshot.queryParamMap.get('s');
+  }
+
+  ngOnInit(): void {
+    // console.log(this.search_query);
+    this._getData();
+  }
+
+  _initLoading() {
+    this.loading = true;
+    this.shows = [];
+    for (let i = 0; i <= 11; i++) {
       this.shows.push({
         id: i,
         name: '',
@@ -65,11 +78,9 @@ export class LibraryComponent implements OnInit {
         updated: undefined
       });
     }
-    this.search_query = this.activatedRoute.snapshot.queryParamMap.get('s');
   }
 
-  ngOnInit(): void {
-    console.log(this.search_query);
+  _getData() {
     this.apollo
       .watchQuery(
         this.search_query != '' && this.search_query != null
@@ -80,7 +91,10 @@ export class LibraryComponent implements OnInit {
               }
             }
           : {
-              query: this._shows
+              query: this._shows,
+              variables: {
+                pageId: this.current_page
+              }
             }
       )
       .valueChanges.subscribe(result => {
@@ -90,5 +104,11 @@ export class LibraryComponent implements OnInit {
         this.error = result['error'];
         this.cd.markForCheck();
       });
+  }
+
+  loadMore() {
+    this._initLoading();
+    this.current_page += 1;
+    this._getData();
   }
 }

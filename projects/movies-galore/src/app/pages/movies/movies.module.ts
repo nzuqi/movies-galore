@@ -20,6 +20,7 @@ import { MoviesEffects } from './movies.effects';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ViewComponent } from './view/view.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,11 @@ const routes: Routes = [
       {
         path: 'library',
         component: LibraryComponent,
+        data: { title: 'app.movies' }
+      },
+      {
+        path: 'details/:id',
+        component: ViewComponent,
         data: { title: 'app.movies' }
       }
     ]
@@ -50,7 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [MoviesComponent, LibraryComponent],
+  declarations: [MoviesComponent, LibraryComponent, ViewComponent],
   imports: [
     LazyElementsModule,
     SharedModule,

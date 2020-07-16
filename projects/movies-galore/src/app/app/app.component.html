@@ -42,14 +42,14 @@
               </span>
 
               <button mat-button mat-stroked-button color="warn" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
-                {{ 'app.menu.login' | translate | uppercase }}
+                <img src="assets/google-logo.png" alt="google" width="18px" style="margin-top: -2px;" class="mr-2">{{ 'app.menu.login' | translate | uppercase }}
               </button>
 
               <button *ngIf="(isAuthenticated$ | async)" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
                 <fa-icon icon="user-circle"></fa-icon>
               </button>
               <mat-menu #toolbarUserMenu="matMenu">
-                <button mat-menu-item routerLink=""><span>{{ 'app.menu.profile' | translate }}</span></button>
+                <button mat-menu-item routerLink="" disabled><span>{{ 'app.menu.profile' | translate }}</span></button>
                 <button mat-menu-item (click)="onLogoutClick()"><span>{{ 'app.menu.logout' | translate }}</span></button>
               </mat-menu>
 
@@ -76,7 +76,7 @@
         <router-outlet #o="outlet"></router-outlet>
       </div>
 
-      <div class="footer d-none">
+      <div class="footer d-none-">
         <div class="container">
           <div class="row">
             <div class="col-12 signature">

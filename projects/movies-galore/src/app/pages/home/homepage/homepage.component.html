@@ -4,7 +4,7 @@
         <h1 [ngClass]="routeAnimationsElements">{{ 'app.home.search.title' | translate }}</h1>
         <div class="row">
           <div class="offset-md-2 col-md-8 entry" [ngClass]="routeAnimationsElements">
-            <app-big-input rtl [placeholder]="'app.home.search.placeholder' | translate" [value]="search_query" (keyup)="onQueryChange($event.target.value)">
+            <app-big-input rtl [placeholder]="'app.home.search.placeholder' | translate" [value]="search_query" (keyup)="onQueryChange($event.target.value)" (keyup.enter)="search()">
               <app-big-input-action fontSet="fas" fontIcon="fa-search" faIcon="search" color="accent" [matTooltip]="'app.home.search.tooltip' | translate" (action)="search()" matTooltipPosition="before"></app-big-input-action>
             </app-big-input>
           </div>
@@ -14,7 +14,7 @@
             {{ 'app.home.button.all' | translate }}
           </a>
           <br>
-          <span [ngClass]="routeAnimationsElements" routerLink="/movies/future-episodes" style="cursor: pointer;">{{ 'app.movies.schedule' | translate }}</span>
+          <!-- <span [ngClass]="routeAnimationsElements" routerLink="/movies/future-episodes" style="cursor: pointer;">{{ 'app.movies.schedule' | translate }}</span> -->
         </div>
         <div class="get-started" [ngClass]="routeAnimationsElements"></div>
       </div>
