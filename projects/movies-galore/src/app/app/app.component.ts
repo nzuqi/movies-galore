@@ -118,7 +118,7 @@ export class AppComponent implements OnInit {
 			&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email
 			&immediate=false
 			&response_type=token
-			&redirect_uri=http://localhost:4200/login
+			&redirect_uri=https://moviesgalore.web.app/login
     `;
     //https://moviesgalore.web.app/login
 		window.location.href = uri;
