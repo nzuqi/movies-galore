@@ -1,8 +1,10 @@
 # Movies Galore
 
-#### DEMO: [https://moviesgalore.web.app/](https://moviesgalore.web.app/)
+### DEMO: [https://moviesgalore.web.app/](https://moviesgalore.web.app/)
 
-This project implements Apollo GraphQL with Angular.
+This project implements Apollo GraphQL with Angular. The repo for Apollo Server can be [found here](https://github.com/nzuqi/movies-galore-server)
+
+<img src='screenshot.png'><br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
