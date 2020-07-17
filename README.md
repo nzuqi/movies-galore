@@ -1,6 +1,6 @@
 # Movies Galore
 
-DEMO: [https://moviesgalore.web.app/](https://moviesgalore.web.app/)
+#### DEMO: [https://moviesgalore.web.app/](https://moviesgalore.web.app/)
 
 This project implements Apollo GraphQL with Angular.
 
