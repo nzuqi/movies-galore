@@ -34,6 +34,7 @@ export class AuthEffects {
         ofType(authLogout),
         tap(() => {
           this.router.navigate(['']);
+          localStorage.removeItem('mvgUser');
           this.localStorageService.setItem(AUTH_KEY, {
             isAuthenticated: false
           });

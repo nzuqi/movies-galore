@@ -5,6 +5,7 @@
        [routerLink]="e.link"
        routerLinkActive #rla="routerLinkActive"
        [active]="rla.isActive"
+       [routerLinkActiveOptions]="{exact: true}"
        [disabled]="e.auth && !(isAuthenticated$ | async)">
       {{e.label | translate}}
     </a></div>

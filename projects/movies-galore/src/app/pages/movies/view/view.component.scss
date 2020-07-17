@@ -18,3 +18,11 @@ code {
   font-size: 14px;
   font-weight: 600;
 }
+._actionBtn {
+  opacity: 1;
+  transition: all .3s ease;
+}
+._actionBtn:hover {
+  opacity: .75;
+  transition: all .3s ease;
+}

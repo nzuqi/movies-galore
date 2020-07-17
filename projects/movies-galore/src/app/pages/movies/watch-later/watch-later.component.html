@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row py-5" [ngClass]="routeAnimationsElements" *ngIf="loading">
+    <div class="col-md-12 my-5 py-5 text-center" style="padding-left: 45%;">
+        <mat-spinner></mat-spinner>
+    </div>
+  </div>
+  <ng-container *ngIf="!loading">
+    <div class="row align-items-end py-5 my-5 px-4" *ngIf="no_data">
+      <h3 class="m-0">
+        You haven't added any shows to watch later.<br>
+        <small style="opacity: 0.7;">Your shows will be listed here.</small>
+      </h3>
+    </div>
+  </ng-container>
+</div>

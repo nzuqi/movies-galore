@@ -21,6 +21,9 @@ import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ViewComponent } from './view/view.component';
+import { WatchLaterComponent } from './watch-later/watch-later.component';
+import { MyFavoritesComponent } from './my-favorites/my-favorites.component';
+import { MyCommentsComponent } from './my-comments/my-comments.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,21 @@ const routes: Routes = [
         path: 'library',
         component: LibraryComponent,
         data: { title: 'app.movies' }
+      },
+      {
+        path: 'watch-later',
+        component: WatchLaterComponent,
+        data: { title: 'app.movies.later' }
+      },
+      {
+        path: 'my-favorites',
+        component: MyFavoritesComponent,
+        data: { title: 'app.movies.favorites' }
+      },
+      {
+        path: 'my-comments',
+        component: MyCommentsComponent,
+        data: { title: 'app.movies.comments' }
       },
       {
         path: 'details/:id',
@@ -56,7 +74,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [MoviesComponent, LibraryComponent, ViewComponent],
+  declarations: [MoviesComponent, LibraryComponent, ViewComponent, WatchLaterComponent, MyFavoritesComponent, MyCommentsComponent],
   imports: [
     LazyElementsModule,
     SharedModule,

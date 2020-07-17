@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { environment as env } from '../../environments/environment';
+import { environment as env, environment } from '../../environments/environment';
 
 import {
   authLogin,
@@ -20,6 +20,7 @@ import {
   actionSettingsChangeLanguage,
   actionSettingsChangeTheme
 } from '../core/settings/settings.actions';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -58,7 +59,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    private http: HttpClient,
   ) {}
 
   private static isIEorEdgeOrSafari() {
@@ -81,8 +83,20 @@ export class AppComponent implements OnInit {
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
 
-  onLoginClick() {
-    this.store.dispatch(authLogin());
+  // onLoginClick() {
+  //   this.store.dispatch(authLogin());
+  // }
+
+  checkSession(): Observable<any> {
+    let data: any = {
+      api_key: "vjlMG5wDfeiiHjaZV8Oq97MIrCkkVVZb2",
+      data: {
+        session_token: '',
+        user_id: ''
+      },
+      id: 7719
+    }
+    return this.http.post<any>("https://martin.co.ke/mvg/api/check_session_token", data, {});
   }
 
   onLogoutClick() {
@@ -96,4 +110,18 @@ export class AppComponent implements OnInit {
   onThemeSelect({ value: theme }) {
     this.store.dispatch(actionSettingsChangeTheme({ theme }));
   }
+
+  googleLogin() {
+		var uri = `
+			https://accounts.google.com/o/oauth2/auth?
+			client_id=` + environment.google.client_id + `
+			&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email
+			&immediate=false
+			&response_type=token
+			&redirect_uri=http://localhost:4200/login
+    `;
+    //https://moviesgalore.web.app/login
+		window.location.href = uri;
+  }
+  
 }

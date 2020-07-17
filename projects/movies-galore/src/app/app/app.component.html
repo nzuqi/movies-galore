@@ -41,7 +41,7 @@
                 </button>
               </span>
 
-              <button mat-button mat-stroked-button color="warn" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
+              <button mat-button mat-stroked-button color="warn" *ngIf="!(isAuthenticated$ | async)" (click)="googleLogin()">
                 <img src="assets/google-logo.png" alt="google" width="18px" style="margin-top: -2px;" class="mr-2">{{ 'app.menu.login' | translate | uppercase }}
               </button>
 
@@ -53,13 +53,13 @@
                 <button mat-menu-item (click)="onLogoutClick()"><span>{{ 'app.menu.logout' | translate }}</span></button>
               </mat-menu>
 
-              <span *ngIf="language$ | async as language">
+              <!-- <span *ngIf="language$ | async as language">
                 <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)" style="opacity: 0.4;">
                   <mat-option *ngFor="let l of languages" [value]="l">
                     {{ l.toUpperCase() }}
                   </mat-option>
                 </mat-select>
-              </span>
+              </span> -->
               <!-- <span *ngIf="theme$ | async as theme">
                 <mat-select [ngModel]="theme" (selectionChange)="onThemeSelect($event)" style="width: 60px; opacity: 0.4;">
                   <mat-option *ngFor="let t of themes" [value]="t.value.toLowerCase()">
@@ -76,7 +76,7 @@
         <router-outlet #o="outlet"></router-outlet>
       </div>
 
-      <div class="footer d-none-">
+      <div class="footer d-none">
         <div class="container">
           <div class="row">
             <div class="col-12 signature">

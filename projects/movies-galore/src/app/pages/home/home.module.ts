@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { SharedModule } from '../../shared/shared.module';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,12 @@ const routes: Routes = [
         path: 'about',
         component: AboutUsComponent,
         data: { title: 'app.about' }
-      }
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+        data: { title: 'app.menu.login' }
+      },
     ]
   }
 ];
@@ -42,7 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [HomeComponent, HomepageComponent, AboutUsComponent],
+  declarations: [HomeComponent, HomepageComponent, AboutUsComponent, LoginComponent],
   imports: [
     LazyElementsModule,
     SharedModule,

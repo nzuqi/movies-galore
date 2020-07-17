@@ -15,7 +15,7 @@ export class MoviesComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
 
   pages = [
-    { link: './', label: 'app.movies.library' },
+    { link: 'library', label: 'app.movies.library' },
     // { link: 'search', label: 'app.movies.search' },
     // { link: 'future-episodes', label: 'app.movies.schedule' },
     // { link: 'people', label: 'app.movies.people' },

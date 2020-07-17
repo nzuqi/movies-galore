@@ -65,14 +65,17 @@ import {
   faRocket,
   faPowerOff,
   faUserCircle,
-  faPlayCircle
+  faPlayCircle,
+  faHeart,
+  faComment,
+  faClock
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faMediumM,
   faTwitter,
   faInstagram,
-  faYoutube
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
 export {
@@ -191,7 +194,10 @@ export class CoreModule {
       faMediumM,
       faTwitter,
       faInstagram,
-      faYoutube
+      faYoutube,
+      faHeart,
+      faComment,
+      faClock
     );
   }
 }

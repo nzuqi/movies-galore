@@ -1,8 +1,24 @@
 <div class="container">
-    <div class="row" [ngClass]="routeAnimationsElements">
-      <div class="col-md-12 my-3">
+    <div class="row" [ngClass]="routeAnimationsElements" *ngIf="!loading">
+      <div class="col-md-9 my-3">
         <h1 rtl class="main-heading">{{ show.name }}</h1>
       </div>
+      <div class="col-md-3 my-3 pt-md-3" style="text-align: right;">
+        <button mat-icon-button class="ml-3 _actionBtn" [disabled]="loadingFavorite" (click)="favoriteShow()" color="{{ (!favorite) ? 'accent' : '' }}" matTooltip="{{ (!favorite) ? 'Add show to favorite' : 'Remove show from favorite' }}">
+            <fa-icon icon="heart" style="font-size: 28px;"></fa-icon>
+        </button>
+        <button mat-icon-button class="ml-3 _actionBtn" [disabled]="loadingToWatch" color="{{ (!towatch) ? 'accent' : '' }}" matTooltip="{{ (!towatch) ? 'Watch later' : 'Remove from watch later' }}">
+            <fa-icon icon="clock" style="font-size: 28px;"></fa-icon>
+        </button>
+        <button mat-icon-button class="ml-3 _actionBtn" [disabled]="loadingComment" color="{{ (!comment) ? 'accent' : '' }}" matTooltip="Comment on this">
+            <fa-icon icon="comment" style="font-size: 28px;"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="row py-5" [ngClass]="routeAnimationsElements" *ngIf="loading">
+        <div class="col-md-12 my-5 py-5 text-center" style="padding-left: 45%;">
+            <mat-spinner></mat-spinner>
+        </div>
     </div>
     <ng-container *ngIf="!loading">
         <div class="row">

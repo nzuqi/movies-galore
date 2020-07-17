@@ -20,5 +20,9 @@ export const environment = {
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress']
+  },
+  google: {
+    client_id: '291363061336-geu1va34udea5botjkjgmjhlehq6lg47.apps.googleusercontent.com',
+    client_secret: 'eLTWYvpfcYPnfEduaCl0bYAn',
   }
 };
