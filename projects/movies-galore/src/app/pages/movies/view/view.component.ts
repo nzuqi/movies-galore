@@ -134,7 +134,7 @@ export class ViewComponent implements OnInit, OnDestroy {
         this.show = result.data && result['data']['show'];
         let _tempEpisodes = result.data && result['data']['show']['episodes'];
 
-        this.getMetaData(this.show.id);
+        // this.getMetaData(this.show.id);
 
         let _newObj = _tempEpisodes.reduce(function(r, a) {
           r[a.season] = r[a.season] || [];
