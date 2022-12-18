@@ -6,7 +6,7 @@ export const environment = {
   production: true,
   test: false,
   i18nPrefix: '',
-  serverUrl: 'https://movies-galore-server.herokuapp.com',
+  serverUrl: 'https://movies-galore-server.martin.co.ke:5304',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
@@ -22,7 +22,8 @@ export const environment = {
     cypress: packageJson.devDependencies['cypress']
   },
   google: {
-    client_id: '291363061336-geu1va34udea5botjkjgmjhlehq6lg47.apps.googleusercontent.com',
-    client_secret: 'eLTWYvpfcYPnfEduaCl0bYAn',
+    client_id:
+      '291363061336-geu1va34udea5botjkjgmjhlehq6lg47.apps.googleusercontent.com',
+    client_secret: 'eLTWYvpfcYPnfEduaCl0bYAn'
   }
 };
